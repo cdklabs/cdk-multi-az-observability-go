@@ -72,6 +72,11 @@ type BasicServiceMultiAZObservabilityProps struct {
 	//
 	// Experimental.
 	Interval awscdk.Duration `field:"optional" json:"interval" yaml:"interval"`
+	// The method used to determine if an AZ is an outlier for latency for Application Load Balancer metrics.
+	// Default: Z_SCORE.
+	//
+	// Experimental.
+	LatencyOutlierCalculation ApplicationLoadBalancerLatencyOutlierCalculation `field:"optional" json:"latencyOutlierCalculation" yaml:"latencyOutlierCalculation"`
 	// (Optional) A map of Availability Zone name to the NAT Gateways in that AZ.
 	//
 	// One alarm per NAT GW will be created. If multiple NAT GWs

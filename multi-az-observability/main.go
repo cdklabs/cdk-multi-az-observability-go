@@ -12,6 +12,14 @@ func init() {
 		"@cdklabs/multi-az-observability.AddCanaryTestProps",
 		reflect.TypeOf((*AddCanaryTestProps)(nil)).Elem(),
 	)
+	_jsii_.RegisterEnum(
+		"@cdklabs/multi-az-observability.ApplicationLoadBalancerLatencyOutlierCalculation",
+		reflect.TypeOf((*ApplicationLoadBalancerLatencyOutlierCalculation)(nil)).Elem(),
+		map[string]interface{}{
+			"STATIC": ApplicationLoadBalancerLatencyOutlierCalculation_STATIC,
+			"Z_SCORE": ApplicationLoadBalancerLatencyOutlierCalculation_Z_SCORE,
+		},
+	)
 	_jsii_.RegisterClass(
 		"@cdklabs/multi-az-observability.AvailabilityZoneMapper",
 		reflect.TypeOf((*AvailabilityZoneMapper)(nil)).Elem(),
