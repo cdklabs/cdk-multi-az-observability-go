@@ -13,11 +13,22 @@ func init() {
 		reflect.TypeOf((*AddCanaryTestProps)(nil)).Elem(),
 	)
 	_jsii_.RegisterEnum(
-		"@cdklabs/multi-az-observability.ApplicationLoadBalancerLatencyOutlierCalculation",
-		reflect.TypeOf((*ApplicationLoadBalancerLatencyOutlierCalculation)(nil)).Elem(),
+		"@cdklabs/multi-az-observability.ApplicationLoadBalancerAvailabilityOutlierAlgorithm",
+		reflect.TypeOf((*ApplicationLoadBalancerAvailabilityOutlierAlgorithm)(nil)).Elem(),
 		map[string]interface{}{
-			"STATIC": ApplicationLoadBalancerLatencyOutlierCalculation_STATIC,
-			"Z_SCORE": ApplicationLoadBalancerLatencyOutlierCalculation_Z_SCORE,
+			"STATIC": ApplicationLoadBalancerAvailabilityOutlierAlgorithm_STATIC,
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.ApplicationLoadBalancerDetectionProps",
+		reflect.TypeOf((*ApplicationLoadBalancerDetectionProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterEnum(
+		"@cdklabs/multi-az-observability.ApplicationLoadBalancerLatencyOutlierAlgorithm",
+		reflect.TypeOf((*ApplicationLoadBalancerLatencyOutlierAlgorithm)(nil)).Elem(),
+		map[string]interface{}{
+			"STATIC": ApplicationLoadBalancerLatencyOutlierAlgorithm_STATIC,
+			"Z_SCORE": ApplicationLoadBalancerLatencyOutlierAlgorithm_Z_SCORE,
 		},
 	)
 	_jsii_.RegisterClass(
@@ -376,6 +387,10 @@ func init() {
 		},
 	)
 	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.NatGatewayDetectionProps",
+		reflect.TypeOf((*NatGatewayDetectionProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@cdklabs/multi-az-observability.NetworkConfigurationProps",
 		reflect.TypeOf((*NetworkConfigurationProps)(nil)).Elem(),
 	)
@@ -445,6 +460,13 @@ func init() {
 			"Z_SCORE": OutlierDetectionAlgorithm_Z_SCORE,
 			"IQR": OutlierDetectionAlgorithm_IQR,
 			"MAD": OutlierDetectionAlgorithm_MAD,
+		},
+	)
+	_jsii_.RegisterEnum(
+		"@cdklabs/multi-az-observability.PacketLossOutlierAlgorithm",
+		reflect.TypeOf((*PacketLossOutlierAlgorithm)(nil)).Elem(),
+		map[string]interface{}{
+			"STATIC": PacketLossOutlierAlgorithm_STATIC,
 		},
 	)
 	_jsii_.RegisterClass(

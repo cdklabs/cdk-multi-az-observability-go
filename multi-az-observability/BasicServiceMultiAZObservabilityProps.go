@@ -2,8 +2,6 @@ package multi-az-observability
 
 import (
 	"github.com/aws/aws-cdk-go/awscdk/v2"
-	"github.com/aws/aws-cdk-go/awscdk/v2/awsec2"
-	"github.com/aws/aws-cdk-go/awscdk/v2/awselasticloadbalancingv2"
 )
 
 // Properties for creating basic multi-AZ observability.
@@ -15,30 +13,17 @@ type BasicServiceMultiAZObservabilityProps struct {
 	// The number of evaluation periods for latency and availabiltiy alarms.
 	// Experimental.
 	EvaluationPeriods *float64 `field:"required" json:"evaluationPeriods" yaml:"evaluationPeriods"`
-	// The percentage of faults for a single ALB to consider an AZ to be unhealthy, this should align with your availability goal.
-	//
-	// For example
-	// 1% or 5%, specify as 1 or 5.
-	// Experimental.
-	FaultCountPercentageThreshold *float64 `field:"required" json:"faultCountPercentageThreshold" yaml:"faultCountPercentageThreshold"`
-	// The statistic used to measure target response latency, like p99,  which can be specified using Stats.percentile(99) or "p99".
-	// Experimental.
-	LatencyStatistic *string `field:"required" json:"latencyStatistic" yaml:"latencyStatistic"`
-	// The threshold in seconds for ALB targets whose responses are slower than this value at the specified percentile statistic.
-	// Experimental.
-	LatencyThreshold *float64 `field:"required" json:"latencyThreshold" yaml:"latencyThreshold"`
 	// The service's name.
 	// Experimental.
 	ServiceName *string `field:"required" json:"serviceName" yaml:"serviceName"`
-	// The application load balancers being used by the service.
+	// Properties for ALBs to detect single AZ impact.
 	//
-	// There will be an alarm created for
-	// each AZ for each ALB. Then, there will be a composite alarm for AZ created from the input
-	// of all ALBs. You must either specify an ALB or a NAT GW.
-	// Default: "No alarms for ALBs will be created".
+	// You must specify this
+	// and/or natGatewayProps.
+	// Default: "No ALBs will be used to calculate impact."
 	//
 	// Experimental.
-	ApplicationLoadBalancers *[]awselasticloadbalancingv2.IApplicationLoadBalancer `field:"optional" json:"applicationLoadBalancers" yaml:"applicationLoadBalancers"`
+	ApplicationLoadBalancerProps *ApplicationLoadBalancerDetectionProps `field:"optional" json:"applicationLoadBalancerProps" yaml:"applicationLoadBalancerProps"`
 	// If you are not using a static bucket to deploy assets, for example you are synthing this and it gets uploaded to a bucket whose name is unknown to you (maybe used as part of a central CI/CD system) and is provided as a parameter to your stack, specify that parameter name here.
 	//
 	// It will override the bucket location CDK provides by
@@ -72,25 +57,14 @@ type BasicServiceMultiAZObservabilityProps struct {
 	//
 	// Experimental.
 	Interval awscdk.Duration `field:"optional" json:"interval" yaml:"interval"`
-	// The method used to determine if an AZ is an outlier for latency for Application Load Balancer metrics.
-	// Default: Z_SCORE.
+	// Properties for NAT Gateways to detect single AZ impact.
+	//
+	// You must specify
+	// this and/or applicationLoadBalancerProps.
+	// Default: "No NAT Gateways will be used to calculate impact."
 	//
 	// Experimental.
-	LatencyOutlierCalculation ApplicationLoadBalancerLatencyOutlierCalculation `field:"optional" json:"latencyOutlierCalculation" yaml:"latencyOutlierCalculation"`
-	// (Optional) A map of Availability Zone name to the NAT Gateways in that AZ.
-	//
-	// One alarm per NAT GW will be created. If multiple NAT GWs
-	// are provided for a single AZ, those alarms will be aggregated into
-	// a composite alarm for the AZ. You must either specify an ALB or a NAT GW.
-	// Default: "No alarms for NAT Gateways will be created".
-	//
-	// Experimental.
-	NatGateways *map[string]*[]awsec2.CfnNatGateway `field:"optional" json:"natGateways" yaml:"natGateways"`
-	// The amount of packet loss in a NAT GW to determine if an AZ is actually impacted, recommendation is 0.01%.
-	// Default: "0.01 (as in 0.01%)"
-	//
-	// Experimental.
-	PacketLossImpactPercentageThreshold *float64 `field:"optional" json:"packetLossImpactPercentageThreshold" yaml:"packetLossImpactPercentageThreshold"`
+	NatGatewayProps *NatGatewayDetectionProps `field:"optional" json:"natGatewayProps" yaml:"natGatewayProps"`
 	// The period to evaluate metrics.
 	// Default: Duration.minutes(1)
 	//
