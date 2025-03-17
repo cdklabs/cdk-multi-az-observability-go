@@ -10,10 +10,10 @@ type ApplicationLoadBalancerDetectionProps struct {
 	// The application load balancers to collect metrics from.
 	// Experimental.
 	ApplicationLoadBalancers *[]awselasticloadbalancingv2.IApplicationLoadBalancer `field:"required" json:"applicationLoadBalancers" yaml:"applicationLoadBalancers"`
-	// The percentage of faults for a single ALB to consider an AZ to be unhealthy, this should align with your availability goal.
+	// The percentage of faults for a single ALB to consider an AZ to be unhealthy, a number between 0 and 100.
 	//
-	// For example
-	// 1% or 5%, 0.01 or 0.05.
+	// This should align with your availability goal. For example
+	// 1% or 5%, provided as 1 or 5.
 	// Experimental.
 	FaultCountPercentThreshold *float64 `field:"required" json:"faultCountPercentThreshold" yaml:"faultCountPercentThreshold"`
 	// The statistic used to measure target response latency, like p99,  which can be specified using Stats.percentile(99) or "p99".
@@ -28,7 +28,7 @@ type ApplicationLoadBalancerDetectionProps struct {
 	// Experimental.
 	AvailabilityOutlierAlgorithm ApplicationLoadBalancerAvailabilityOutlierAlgorithm `field:"optional" json:"availabilityOutlierAlgorithm" yaml:"availabilityOutlierAlgorithm"`
 	// The threshold for the outlier detection algorithm.
-	// Default: "This depends on the algorithm used. STATIC: 0.66."
+	// Default: "This depends on the algorithm used. STATIC: 66"
 	//
 	// Experimental.
 	AvailabilityOutlierThreshold *float64 `field:"optional" json:"availabilityOutlierThreshold" yaml:"availabilityOutlierThreshold"`
@@ -38,7 +38,7 @@ type ApplicationLoadBalancerDetectionProps struct {
 	// Experimental.
 	LatencyOutlierAlgorithm ApplicationLoadBalancerLatencyOutlierAlgorithm `field:"optional" json:"latencyOutlierAlgorithm" yaml:"latencyOutlierAlgorithm"`
 	// The threshold for the outlier detection algorithm.
-	// Default: "This depends on the algorithm used. STATIC: 0.66. Z_SCORE: 3."
+	// Default: "This depends on the algorithm used. STATIC: 66. Z_SCORE: 3."
 	//
 	// Experimental.
 	LatencyOutlierThreshold *float64 `field:"optional" json:"latencyOutlierThreshold" yaml:"latencyOutlierThreshold"`

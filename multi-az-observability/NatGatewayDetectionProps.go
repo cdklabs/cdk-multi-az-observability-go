@@ -16,7 +16,7 @@ type NatGatewayDetectionProps struct {
 	// Experimental.
 	PacketLossOutlierAlgorithm PacketLossOutlierAlgorithm `field:"optional" json:"packetLossOutlierAlgorithm" yaml:"packetLossOutlierAlgorithm"`
 	// The threshold used with the outlier calculation.
-	// Default: "This depends on the outlier algorithm. STATIC: 0.66. Z-SCORE: 3."
+	// Default: "This depends on the outlier algorithm. STATIC: 66. Z-SCORE: 3."
 	//
 	// Experimental.
 	PacketLossOutlierThreshold *float64 `field:"optional" json:"packetLossOutlierThreshold" yaml:"packetLossOutlierThreshold"`
