@@ -317,8 +317,6 @@ func init() {
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "regionalAvailabilityCanaryAlarm", GoGetter: "RegionalAvailabilityCanaryAlarm"},
 			_jsii_.MemberProperty{JsiiProperty: "regionalAvailabilityOrLatencyCanaryAlarm", GoGetter: "RegionalAvailabilityOrLatencyCanaryAlarm"},
-			_jsii_.MemberProperty{JsiiProperty: "regionalAvailabilityOrLatencyServerSideAlarm", GoGetter: "RegionalAvailabilityOrLatencyServerSideAlarm"},
-			_jsii_.MemberProperty{JsiiProperty: "regionalAvailabilityServerSideAlarm", GoGetter: "RegionalAvailabilityServerSideAlarm"},
 			_jsii_.MemberProperty{JsiiProperty: "regionalFaultCountServerSideAlarm", GoGetter: "RegionalFaultCountServerSideAlarm"},
 			_jsii_.MemberProperty{JsiiProperty: "service", GoGetter: "Service"},
 			_jsii_.MemberProperty{JsiiProperty: "zonalAggregateIsolatedImpactAlarms", GoGetter: "ZonalAggregateIsolatedImpactAlarms"},

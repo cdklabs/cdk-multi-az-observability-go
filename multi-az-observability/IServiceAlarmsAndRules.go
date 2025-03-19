@@ -19,16 +19,6 @@ type IServiceAlarmsAndRules interface {
 	RegionalAvailabilityOrLatencyCanaryAlarm() awscloudwatch.IAlarm
 	// Experimental.
 	SetRegionalAvailabilityOrLatencyCanaryAlarm(r awscloudwatch.IAlarm)
-	// An alarm for regional availability or latency impact of any critical operation as measured by the server-side.
-	// Experimental.
-	RegionalAvailabilityOrLatencyServerSideAlarm() awscloudwatch.IAlarm
-	// Experimental.
-	SetRegionalAvailabilityOrLatencyServerSideAlarm(r awscloudwatch.IAlarm)
-	// An alarm for regional availability impact of any critical operation as measured by the server-side.
-	// Experimental.
-	RegionalAvailabilityServerSideAlarm() awscloudwatch.IAlarm
-	// Experimental.
-	SetRegionalAvailabilityServerSideAlarm(r awscloudwatch.IAlarm)
 	// An alarm for fault count exceeding a regional threshold for all critical operations.
 	// Experimental.
 	RegionalFaultCountServerSideAlarm() awscloudwatch.IAlarm
@@ -97,48 +87,6 @@ func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalAvailabilityOrLatencyCanary
 	_jsii_.Set(
 		j,
 		"regionalAvailabilityOrLatencyCanaryAlarm",
-		val,
-	)
-}
-
-func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalAvailabilityOrLatencyServerSideAlarm() awscloudwatch.IAlarm {
-	var returns awscloudwatch.IAlarm
-	_jsii_.Get(
-		j,
-		"regionalAvailabilityOrLatencyServerSideAlarm",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalAvailabilityOrLatencyServerSideAlarm(val awscloudwatch.IAlarm) {
-	if err := j.validateSetRegionalAvailabilityOrLatencyServerSideAlarmParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"regionalAvailabilityOrLatencyServerSideAlarm",
-		val,
-	)
-}
-
-func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalAvailabilityServerSideAlarm() awscloudwatch.IAlarm {
-	var returns awscloudwatch.IAlarm
-	_jsii_.Get(
-		j,
-		"regionalAvailabilityServerSideAlarm",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalAvailabilityServerSideAlarm(val awscloudwatch.IAlarm) {
-	if err := j.validateSetRegionalAvailabilityServerSideAlarmParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"regionalAvailabilityServerSideAlarm",
 		val,
 	)
 }
