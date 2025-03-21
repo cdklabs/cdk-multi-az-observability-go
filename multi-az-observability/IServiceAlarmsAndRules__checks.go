@@ -24,7 +24,7 @@ func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetServiceParameters(val ISer
 	return nil
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetZonalAggregateIsolatedImpactAlarmsParameters(val *[]awscloudwatch.IAlarm) error {
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetZonalAggregateIsolatedImpactAlarmsParameters(val *map[string]awscloudwatch.IAlarm) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
@@ -32,7 +32,7 @@ func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetZonalAggregateIsolatedImpa
 	return nil
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetZonalServerSideIsolatedImpactAlarmsParameters(val *[]awscloudwatch.IAlarm) error {
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetZonalServerSideIsolatedImpactAlarmsParameters(val *map[string]awscloudwatch.IAlarm) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}

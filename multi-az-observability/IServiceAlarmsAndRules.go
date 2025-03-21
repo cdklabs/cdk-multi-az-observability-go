@@ -35,9 +35,9 @@ type IServiceAlarmsAndRules interface {
 	// triggers for availability or latency impact to any critical operation in that AZ
 	// that indicates it has isolated impact as measured by canaries or server-side.
 	// Experimental.
-	ZonalAggregateIsolatedImpactAlarms() *[]awscloudwatch.IAlarm
+	ZonalAggregateIsolatedImpactAlarms() *map[string]awscloudwatch.IAlarm
 	// Experimental.
-	SetZonalAggregateIsolatedImpactAlarms(z *[]awscloudwatch.IAlarm)
+	SetZonalAggregateIsolatedImpactAlarms(z *map[string]awscloudwatch.IAlarm)
 	// The zonal server-side isolated impact alarms.
 	//
 	// There is 1 alarm per AZ that triggers
@@ -45,9 +45,9 @@ type IServiceAlarmsAndRules interface {
 	// for deployment monitoring to not inadvertently fail when a canary can't contact an AZ
 	// during a deployment.
 	// Experimental.
-	ZonalServerSideIsolatedImpactAlarms() *[]awscloudwatch.IAlarm
+	ZonalServerSideIsolatedImpactAlarms() *map[string]awscloudwatch.IAlarm
 	// Experimental.
-	SetZonalServerSideIsolatedImpactAlarms(z *[]awscloudwatch.IAlarm)
+	SetZonalServerSideIsolatedImpactAlarms(z *map[string]awscloudwatch.IAlarm)
 }
 
 // The jsii proxy for IServiceAlarmsAndRules
@@ -133,8 +133,8 @@ func (j *jsiiProxy_IServiceAlarmsAndRules)SetService(val IService) {
 	)
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules) ZonalAggregateIsolatedImpactAlarms() *[]awscloudwatch.IAlarm {
-	var returns *[]awscloudwatch.IAlarm
+func (j *jsiiProxy_IServiceAlarmsAndRules) ZonalAggregateIsolatedImpactAlarms() *map[string]awscloudwatch.IAlarm {
+	var returns *map[string]awscloudwatch.IAlarm
 	_jsii_.Get(
 		j,
 		"zonalAggregateIsolatedImpactAlarms",
@@ -143,7 +143,7 @@ func (j *jsiiProxy_IServiceAlarmsAndRules) ZonalAggregateIsolatedImpactAlarms() 
 	return returns
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules)SetZonalAggregateIsolatedImpactAlarms(val *[]awscloudwatch.IAlarm) {
+func (j *jsiiProxy_IServiceAlarmsAndRules)SetZonalAggregateIsolatedImpactAlarms(val *map[string]awscloudwatch.IAlarm) {
 	if err := j.validateSetZonalAggregateIsolatedImpactAlarmsParameters(val); err != nil {
 		panic(err)
 	}
@@ -154,8 +154,8 @@ func (j *jsiiProxy_IServiceAlarmsAndRules)SetZonalAggregateIsolatedImpactAlarms(
 	)
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules) ZonalServerSideIsolatedImpactAlarms() *[]awscloudwatch.IAlarm {
-	var returns *[]awscloudwatch.IAlarm
+func (j *jsiiProxy_IServiceAlarmsAndRules) ZonalServerSideIsolatedImpactAlarms() *map[string]awscloudwatch.IAlarm {
+	var returns *map[string]awscloudwatch.IAlarm
 	_jsii_.Get(
 		j,
 		"zonalServerSideIsolatedImpactAlarms",
@@ -164,7 +164,7 @@ func (j *jsiiProxy_IServiceAlarmsAndRules) ZonalServerSideIsolatedImpactAlarms()
 	return returns
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules)SetZonalServerSideIsolatedImpactAlarms(val *[]awscloudwatch.IAlarm) {
+func (j *jsiiProxy_IServiceAlarmsAndRules)SetZonalServerSideIsolatedImpactAlarms(val *map[string]awscloudwatch.IAlarm) {
 	if err := j.validateSetZonalServerSideIsolatedImpactAlarmsParameters(val); err != nil {
 		panic(err)
 	}
