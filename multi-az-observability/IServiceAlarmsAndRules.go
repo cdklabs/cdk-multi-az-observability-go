@@ -9,26 +9,34 @@ import (
 // Service level alarms and rules using critical operations.
 // Experimental.
 type IServiceAlarmsAndRules interface {
-	// An alarm for regional availability impact of any critical operation as measured by the canary.
+	// An alarm indicating the canary has discovered an availability or latency impact on a critical operation while testing the regional endpoint.
 	// Experimental.
-	RegionalAvailabilityCanaryAlarm() awscloudwatch.IAlarm
+	RegionalCanaryAlarm() awscloudwatch.IAlarm
 	// Experimental.
-	SetRegionalAvailabilityCanaryAlarm(r awscloudwatch.IAlarm)
-	// An alarm for regional availability or latency impact of any critical operation as measured by the canary.
+	SetRegionalCanaryAlarm(r awscloudwatch.IAlarm)
+	// An alarm indicating there is availability or latency impact on a critical operation that is not scoped to a single availability zone as measured by the server-side and/or canary (if present).
 	// Experimental.
-	RegionalAvailabilityOrLatencyCanaryAlarm() awscloudwatch.IAlarm
+	RegionalImpactAlarm() awscloudwatch.IAlarm
 	// Experimental.
-	SetRegionalAvailabilityOrLatencyCanaryAlarm(r awscloudwatch.IAlarm)
-	// An alarm for fault count exceeding a regional threshold for all critical operations.
+	SetRegionalImpactAlarm(r awscloudwatch.IAlarm)
+	// An alarm indicating there is availability or latency impact on a critical operation that is not scoped to a single availability zone as measured by the server-side.
 	// Experimental.
-	RegionalFaultCountServerSideAlarm() awscloudwatch.IAlarm
+	RegionalServerSideImpactAlarm() awscloudwatch.IAlarm
 	// Experimental.
-	SetRegionalFaultCountServerSideAlarm(r awscloudwatch.IAlarm)
+	SetRegionalServerSideImpactAlarm(r awscloudwatch.IAlarm)
 	// The service these alarms and rules are for.
 	// Experimental.
 	Service() IService
 	// Experimental.
 	SetService(s IService)
+	// This is the top level alarm you should tie notifications/paging/alerting to.
+	//
+	// It triggers
+	// on any impact to a critical operation either zonally scoped or regionally scoped.
+	// Experimental.
+	ServiceImpactAlarm() awscloudwatch.IAlarm
+	// Experimental.
+	SetServiceImpactAlarm(s awscloudwatch.IAlarm)
 	// The zonal aggregate isolated impact alarms.
 	//
 	// There is 1 alarm per AZ that
@@ -41,7 +49,7 @@ type IServiceAlarmsAndRules interface {
 	// The zonal server-side isolated impact alarms.
 	//
 	// There is 1 alarm per AZ that triggers
-	// on availability or atency impact to any critical operation in that AZ. These are useful
+	// on availability or latency impact to any critical operation in that AZ. These are useful
 	// for deployment monitoring to not inadvertently fail when a canary can't contact an AZ
 	// during a deployment.
 	// Experimental.
@@ -55,59 +63,62 @@ type jsiiProxy_IServiceAlarmsAndRules struct {
 	_ byte // padding
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalAvailabilityCanaryAlarm() awscloudwatch.IAlarm {
+func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalCanaryAlarm() awscloudwatch.IAlarm {
 	var returns awscloudwatch.IAlarm
 	_jsii_.Get(
 		j,
-		"regionalAvailabilityCanaryAlarm",
+		"regionalCanaryAlarm",
 		&returns,
 	)
 	return returns
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalAvailabilityCanaryAlarm(val awscloudwatch.IAlarm) {
+func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalCanaryAlarm(val awscloudwatch.IAlarm) {
 	_jsii_.Set(
 		j,
-		"regionalAvailabilityCanaryAlarm",
+		"regionalCanaryAlarm",
 		val,
 	)
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalAvailabilityOrLatencyCanaryAlarm() awscloudwatch.IAlarm {
+func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalImpactAlarm() awscloudwatch.IAlarm {
 	var returns awscloudwatch.IAlarm
 	_jsii_.Get(
 		j,
-		"regionalAvailabilityOrLatencyCanaryAlarm",
+		"regionalImpactAlarm",
 		&returns,
 	)
 	return returns
 }
 
-func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalAvailabilityOrLatencyCanaryAlarm(val awscloudwatch.IAlarm) {
-	_jsii_.Set(
-		j,
-		"regionalAvailabilityOrLatencyCanaryAlarm",
-		val,
-	)
-}
-
-func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalFaultCountServerSideAlarm() awscloudwatch.IAlarm {
-	var returns awscloudwatch.IAlarm
-	_jsii_.Get(
-		j,
-		"regionalFaultCountServerSideAlarm",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalFaultCountServerSideAlarm(val awscloudwatch.IAlarm) {
-	if err := j.validateSetRegionalFaultCountServerSideAlarmParameters(val); err != nil {
+func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalImpactAlarm(val awscloudwatch.IAlarm) {
+	if err := j.validateSetRegionalImpactAlarmParameters(val); err != nil {
 		panic(err)
 	}
 	_jsii_.Set(
 		j,
-		"regionalFaultCountServerSideAlarm",
+		"regionalImpactAlarm",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) RegionalServerSideImpactAlarm() awscloudwatch.IAlarm {
+	var returns awscloudwatch.IAlarm
+	_jsii_.Get(
+		j,
+		"regionalServerSideImpactAlarm",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules)SetRegionalServerSideImpactAlarm(val awscloudwatch.IAlarm) {
+	if err := j.validateSetRegionalServerSideImpactAlarmParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"regionalServerSideImpactAlarm",
 		val,
 	)
 }
@@ -129,6 +140,27 @@ func (j *jsiiProxy_IServiceAlarmsAndRules)SetService(val IService) {
 	_jsii_.Set(
 		j,
 		"service",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) ServiceImpactAlarm() awscloudwatch.IAlarm {
+	var returns awscloudwatch.IAlarm
+	_jsii_.Get(
+		j,
+		"serviceImpactAlarm",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules)SetServiceImpactAlarm(val awscloudwatch.IAlarm) {
+	if err := j.validateSetServiceImpactAlarmParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"serviceImpactAlarm",
 		val,
 	)
 }

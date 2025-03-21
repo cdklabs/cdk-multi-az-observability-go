@@ -4,11 +4,19 @@ package multi-az-observability
 
 // Building without runtime type checking enabled, so all the below just return nil
 
-func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetRegionalFaultCountServerSideAlarmParameters(val awscloudwatch.IAlarm) error {
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetRegionalImpactAlarmParameters(val awscloudwatch.IAlarm) error {
+	return nil
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetRegionalServerSideImpactAlarmParameters(val awscloudwatch.IAlarm) error {
 	return nil
 }
 
 func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetServiceParameters(val IService) error {
+	return nil
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetServiceImpactAlarmParameters(val awscloudwatch.IAlarm) error {
 	return nil
 }
 
