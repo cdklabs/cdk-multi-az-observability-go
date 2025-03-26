@@ -29,7 +29,7 @@ type Service interface {
 	CanaryTestProps() *AddCanaryTestProps
 	// The default settings that are used for availability metrics for all operations unless specifically overridden in an operation definition.
 	// Experimental.
-	DefaultAvailabilityMetricDetails() IServiceMetricDetails
+	DefaultAvailabilityMetricDetails() IServiceAvailabilityMetricDetails
 	// The default settings that are used for contributor insight rules.
 	// Default: - No defaults are provided and must be specified per operation.
 	//
@@ -37,7 +37,7 @@ type Service interface {
 	DefaultContributorInsightRuleDetails() IContributorInsightRuleDetails
 	// The default settings that are used for availability metrics for all operations unless specifically overridden in an operation definition.
 	// Experimental.
-	DefaultLatencyMetricDetails() IServiceMetricDetails
+	DefaultLatencyMetricDetails() IServiceLatencyMetricDetails
 	// The fault count threshold that indicates the service is unhealthy.
 	//
 	// This is an absolute value of faults
@@ -100,8 +100,8 @@ func (j *jsiiProxy_Service) CanaryTestProps() *AddCanaryTestProps {
 	return returns
 }
 
-func (j *jsiiProxy_Service) DefaultAvailabilityMetricDetails() IServiceMetricDetails {
-	var returns IServiceMetricDetails
+func (j *jsiiProxy_Service) DefaultAvailabilityMetricDetails() IServiceAvailabilityMetricDetails {
+	var returns IServiceAvailabilityMetricDetails
 	_jsii_.Get(
 		j,
 		"defaultAvailabilityMetricDetails",
@@ -120,8 +120,8 @@ func (j *jsiiProxy_Service) DefaultContributorInsightRuleDetails() IContributorI
 	return returns
 }
 
-func (j *jsiiProxy_Service) DefaultLatencyMetricDetails() IServiceMetricDetails {
-	var returns IServiceMetricDetails
+func (j *jsiiProxy_Service) DefaultLatencyMetricDetails() IServiceLatencyMetricDetails {
+	var returns IServiceLatencyMetricDetails
 	_jsii_.Get(
 		j,
 		"defaultLatencyMetricDetails",

@@ -18,15 +18,9 @@ type ICanaryTestMetricsOverride interface {
 	// The number of evaluation periods for latency and availabiltiy alarms.
 	// Experimental.
 	EvaluationPeriods() *float64
-	// The threshold for alarms associated with fault metrics, for example if measuring fault rate, the threshold may be 1, meaning you would want an alarm that triggers if the fault rate goes above 1%.
-	// Experimental.
-	FaultAlarmThreshold() *float64
 	// The period for the metrics.
 	// Experimental.
 	Period() awscdk.Duration
-	// The threshold for alarms associated with success metrics, for example if measuring success rate, the threshold may be 99, meaning you would want an alarm that triggers if success drops below 99%.
-	// Experimental.
-	SuccessAlarmThreshold() *float64
 }
 
 // The jsii proxy for ICanaryTestMetricsOverride
@@ -64,31 +58,11 @@ func (j *jsiiProxy_ICanaryTestMetricsOverride) EvaluationPeriods() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_ICanaryTestMetricsOverride) FaultAlarmThreshold() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"faultAlarmThreshold",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_ICanaryTestMetricsOverride) Period() awscdk.Duration {
 	var returns awscdk.Duration
 	_jsii_.Get(
 		j,
 		"period",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_ICanaryTestMetricsOverride) SuccessAlarmThreshold() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"successAlarmThreshold",
 		&returns,
 	)
 	return returns

@@ -20,6 +20,9 @@ type IBasicServiceMultiAZObservability interface {
 	// Experimental.
 	SetAggregateZonalIsolatedImpactAlarms(a *map[string]awscloudwatch.IAlarm)
 	// The alarms indicating if an AZ is an outlier for ALB faults and has isolated impact.
+	//
+	// This will be 1 composite alarm
+	// per AZ that triggers if any ALB in that AZ sees outlier impact.
 	// Experimental.
 	AlbZonalIsolatedImpactAlarms() *map[string]awscloudwatch.IAlarm
 	// Experimental.
@@ -29,12 +32,20 @@ type IBasicServiceMultiAZObservability interface {
 	ApplicationLoadBalancers() *[]awselasticloadbalancingv2.IApplicationLoadBalancer
 	// Experimental.
 	SetApplicationLoadBalancers(a *[]awselasticloadbalancingv2.IApplicationLoadBalancer)
+	// The optional dashboard created for observability.
+	// Experimental.
+	Dashboard() awscloudwatch.Dashboard
+	// Experimental.
+	SetDashboard(d awscloudwatch.Dashboard)
 	// The NAT Gateways being used in the service, each set of NAT Gateways are keyed by their Availability Zone Id.
 	// Experimental.
 	NatGateways() *map[string]*[]awsec2.CfnNatGateway
 	// Experimental.
 	SetNatGateways(n *map[string]*[]awsec2.CfnNatGateway)
 	// The alarms indicating if an AZ is an outlier for NAT GW packet loss and has isolated impact.
+	//
+	// This will be 1 composite alarm
+	// per AZ that triggers if any NAT GW in that AZ sees outlier impact.
 	// Experimental.
 	NatGWZonalIsolatedImpactAlarms() *map[string]awscloudwatch.IAlarm
 	// Experimental.
@@ -104,6 +115,24 @@ func (j *jsiiProxy_IBasicServiceMultiAZObservability)SetApplicationLoadBalancers
 	_jsii_.Set(
 		j,
 		"applicationLoadBalancers",
+		val,
+	)
+}
+
+func (j *jsiiProxy_IBasicServiceMultiAZObservability) Dashboard() awscloudwatch.Dashboard {
+	var returns awscloudwatch.Dashboard
+	_jsii_.Get(
+		j,
+		"dashboard",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IBasicServiceMultiAZObservability)SetDashboard(val awscloudwatch.Dashboard) {
+	_jsii_.Set(
+		j,
+		"dashboard",
 		val,
 	)
 }

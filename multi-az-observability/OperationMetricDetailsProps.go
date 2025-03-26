@@ -29,11 +29,6 @@ type OperationMetricDetailsProps struct {
 	//
 	// Experimental.
 	EvaluationPeriods *float64 `field:"optional" json:"evaluationPeriods" yaml:"evaluationPeriods"`
-	// The threshold for alarms associated with fault metrics, for example if measuring fault rate, the threshold may be 1, meaning you would want an alarm that triggers if the fault rate goes above 1%.
-	// Default: - The service default is used.
-	//
-	// Experimental.
-	FaultAlarmThreshold *float64 `field:"optional" json:"faultAlarmThreshold" yaml:"faultAlarmThreshold"`
 	// The names of fault indicating metrics.
 	// Default: - The service default is used.
 	//
@@ -65,11 +60,6 @@ type OperationMetricDetailsProps struct {
 	//
 	// Experimental.
 	Period awscdk.Duration `field:"optional" json:"period" yaml:"period"`
-	// The threshold for alarms associated with success metrics, for example if measuring success rate, the threshold may be 99, meaning you would want an alarm that triggers if success drops below 99%.
-	// Default: - The service default is used.
-	//
-	// Experimental.
-	SuccessAlarmThreshold *float64 `field:"optional" json:"successAlarmThreshold" yaml:"successAlarmThreshold"`
 	// The names of success indicating metrics.
 	// Default: - The service default is used.
 	//

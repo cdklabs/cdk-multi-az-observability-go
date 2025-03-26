@@ -104,8 +104,8 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"@cdklabs/multi-az-observability.CanaryTestMetricsOverride",
-		reflect.TypeOf((*CanaryTestMetricsOverride)(nil)).Elem(),
+		"@cdklabs/multi-az-observability.CanaryTestAvailabilityMetricsOverride",
+		reflect.TypeOf((*CanaryTestAvailabilityMetricsOverride)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
 			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
@@ -113,6 +113,45 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "faultAlarmThreshold", GoGetter: "FaultAlarmThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CanaryTestAvailabilityMetricsOverride{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_CanaryTestMetricsOverride)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.CanaryTestAvailabilityMetricsOverrideProps",
+		reflect.TypeOf((*CanaryTestAvailabilityMetricsOverrideProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@cdklabs/multi-az-observability.CanaryTestLatencyMetricsOverride",
+		reflect.TypeOf((*CanaryTestLatencyMetricsOverride)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+		},
+		func() interface{} {
+			j := jsiiProxy_CanaryTestLatencyMetricsOverride{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_CanaryTestMetricsOverride)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.CanaryTestLatencyMetricsOverrideProps",
+		reflect.TypeOf((*CanaryTestLatencyMetricsOverrideProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@cdklabs/multi-az-observability.CanaryTestMetricsOverride",
+		reflect.TypeOf((*CanaryTestMetricsOverride)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 		},
 		func() interface{} {
 			j := jsiiProxy_CanaryTestMetricsOverride{}
@@ -170,12 +209,38 @@ func init() {
 		},
 	)
 	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IBaseOperationRegionalAlarmsAndRules",
+		reflect.TypeOf((*IBaseOperationRegionalAlarmsAndRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "availabilityAlarm", GoGetter: "AvailabilityAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityOrLatencyAlarm", GoGetter: "AvailabilityOrLatencyAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "latencyAlarm", GoGetter: "LatencyAlarm"},
+		},
+		func() interface{} {
+			return &jsiiProxy_IBaseOperationRegionalAlarmsAndRules{}
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IBaseOperationZonalAlarmsAndRules",
+		reflect.TypeOf((*IBaseOperationZonalAlarmsAndRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "availabilityAlarm", GoGetter: "AvailabilityAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneIsOutlierForFaults", GoGetter: "AvailabilityZoneIsOutlierForFaults"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneIsOutlierForLatency", GoGetter: "AvailabilityZoneIsOutlierForLatency"},
+			_jsii_.MemberProperty{JsiiProperty: "latencyAlarm", GoGetter: "LatencyAlarm"},
+		},
+		func() interface{} {
+			return &jsiiProxy_IBaseOperationZonalAlarmsAndRules{}
+		},
+	)
+	_jsii_.RegisterInterface(
 		"@cdklabs/multi-az-observability.IBasicServiceMultiAZObservability",
 		reflect.TypeOf((*IBasicServiceMultiAZObservability)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "aggregateZonalIsolatedImpactAlarms", GoGetter: "AggregateZonalIsolatedImpactAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "albZonalIsolatedImpactAlarms", GoGetter: "AlbZonalIsolatedImpactAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "applicationLoadBalancers", GoGetter: "ApplicationLoadBalancers"},
+			_jsii_.MemberProperty{JsiiProperty: "dashboard", GoGetter: "Dashboard"},
 			_jsii_.MemberProperty{JsiiProperty: "natGateways", GoGetter: "NatGateways"},
 			_jsii_.MemberProperty{JsiiProperty: "natGWZonalIsolatedImpactAlarms", GoGetter: "NatGWZonalIsolatedImpactAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
@@ -199,8 +264,38 @@ func init() {
 		},
 	)
 	_jsii_.RegisterInterface(
-		"@cdklabs/multi-az-observability.ICanaryTestMetricsOverride",
-		reflect.TypeOf((*ICanaryTestMetricsOverride)(nil)).Elem(),
+		"@cdklabs/multi-az-observability.ICanaryOperationRegionalAlarmsAndRules",
+		reflect.TypeOf((*ICanaryOperationRegionalAlarmsAndRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "availabilityAlarm", GoGetter: "AvailabilityAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityOrLatencyAlarm", GoGetter: "AvailabilityOrLatencyAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "latencyAlarm", GoGetter: "LatencyAlarm"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ICanaryOperationRegionalAlarmsAndRules{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IBaseOperationRegionalAlarmsAndRules)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.ICanaryOperationZonalAlarmsAndRules",
+		reflect.TypeOf((*ICanaryOperationZonalAlarmsAndRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "availabilityAlarm", GoGetter: "AvailabilityAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneIsOutlierForFaults", GoGetter: "AvailabilityZoneIsOutlierForFaults"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneIsOutlierForLatency", GoGetter: "AvailabilityZoneIsOutlierForLatency"},
+			_jsii_.MemberProperty{JsiiProperty: "isolatedImpactAlarm", GoGetter: "IsolatedImpactAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "latencyAlarm", GoGetter: "LatencyAlarm"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ICanaryOperationZonalAlarmsAndRules{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IBaseOperationZonalAlarmsAndRules)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.ICanaryTestAvailabilityMetricsOverride",
+		reflect.TypeOf((*ICanaryTestAvailabilityMetricsOverride)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
 			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
@@ -208,6 +303,37 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "faultAlarmThreshold", GoGetter: "FaultAlarmThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ICanaryTestAvailabilityMetricsOverride{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_ICanaryTestMetricsOverride)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.ICanaryTestLatencyMetricsOverride",
+		reflect.TypeOf((*ICanaryTestLatencyMetricsOverride)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ICanaryTestLatencyMetricsOverride{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_ICanaryTestMetricsOverride)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.ICanaryTestMetricsOverride",
+		reflect.TypeOf((*ICanaryTestMetricsOverride)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 		},
 		func() interface{} {
 			return &jsiiProxy_ICanaryTestMetricsOverride{}
@@ -235,6 +361,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "canaryLogGroup", GoGetter: "CanaryLogGroup"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberProperty{JsiiProperty: "operationDashboards", GoGetter: "OperationDashboards"},
+			_jsii_.MemberProperty{JsiiProperty: "perOperationAlarmsAndRules", GoGetter: "PerOperationAlarmsAndRules"},
 			_jsii_.MemberProperty{JsiiProperty: "perOperationZonalImpactAlarms", GoGetter: "PerOperationZonalImpactAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceAlarms", GoGetter: "ServiceAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceDashboard", GoGetter: "ServiceDashboard"},
@@ -268,8 +395,24 @@ func init() {
 		},
 	)
 	_jsii_.RegisterInterface(
-		"@cdklabs/multi-az-observability.IOperationMetricDetails",
-		reflect.TypeOf((*IOperationMetricDetails)(nil)).Elem(),
+		"@cdklabs/multi-az-observability.IOperationAlarmsAndRules",
+		reflect.TypeOf((*IOperationAlarmsAndRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "aggregateZonalAlarms", GoGetter: "AggregateZonalAlarms"},
+			_jsii_.MemberProperty{JsiiProperty: "canaryRegionalAlarmsAndRules", GoGetter: "CanaryRegionalAlarmsAndRules"},
+			_jsii_.MemberProperty{JsiiProperty: "canaryZonalAlarmsAndRules", GoGetter: "CanaryZonalAlarmsAndRules"},
+			_jsii_.MemberProperty{JsiiProperty: "operation", GoGetter: "Operation"},
+			_jsii_.MemberProperty{JsiiProperty: "regionalImpactAlarm", GoGetter: "RegionalImpactAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "serverSideRegionalAlarmsAndRules", GoGetter: "ServerSideRegionalAlarmsAndRules"},
+			_jsii_.MemberProperty{JsiiProperty: "serverSideZonalAlarmsAndRules", GoGetter: "ServerSideZonalAlarmsAndRules"},
+		},
+		func() interface{} {
+			return &jsiiProxy_IOperationAlarmsAndRules{}
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IOperationAvailabilityMetricDetails",
+		reflect.TypeOf((*IOperationAvailabilityMetricDetails)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
 			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
@@ -287,7 +430,91 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
 		},
 		func() interface{} {
+			j := jsiiProxy_IOperationAvailabilityMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IOperationMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IOperationLatencyMetricDetails",
+		reflect.TypeOf((*IOperationLatencyMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricDimensions", GoGetter: "MetricDimensions"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "operationName", GoGetter: "OperationName"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IOperationLatencyMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IOperationMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IOperationMetricDetails",
+		reflect.TypeOf((*IOperationMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricDimensions", GoGetter: "MetricDimensions"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "operationName", GoGetter: "OperationName"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
 			return &jsiiProxy_IOperationMetricDetails{}
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IServerSideOperationRegionalAlarmsAndRules",
+		reflect.TypeOf((*IServerSideOperationRegionalAlarmsAndRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "availabilityAlarm", GoGetter: "AvailabilityAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityOrLatencyAlarm", GoGetter: "AvailabilityOrLatencyAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "instanceContributorsToRegionalFaults", GoGetter: "InstanceContributorsToRegionalFaults"},
+			_jsii_.MemberProperty{JsiiProperty: "instanceContributorsToRegionalHighLatency", GoGetter: "InstanceContributorsToRegionalHighLatency"},
+			_jsii_.MemberProperty{JsiiProperty: "latencyAlarm", GoGetter: "LatencyAlarm"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IServerSideOperationRegionalAlarmsAndRules{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IBaseOperationRegionalAlarmsAndRules)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IServerSideOperationZonalAlarmsAndRules",
+		reflect.TypeOf((*IServerSideOperationZonalAlarmsAndRules)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "availabilityAlarm", GoGetter: "AvailabilityAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneIsOutlierForFaults", GoGetter: "AvailabilityZoneIsOutlierForFaults"},
+			_jsii_.MemberProperty{JsiiProperty: "availabilityZoneIsOutlierForLatency", GoGetter: "AvailabilityZoneIsOutlierForLatency"},
+			_jsii_.MemberProperty{JsiiProperty: "instanceContributorsToFaultsInThisAZ", GoGetter: "InstanceContributorsToFaultsInThisAZ"},
+			_jsii_.MemberProperty{JsiiProperty: "instanceContributorsToHighLatencyInThisAZ", GoGetter: "InstanceContributorsToHighLatencyInThisAZ"},
+			_jsii_.MemberProperty{JsiiProperty: "instancesHandlingRequestsInThisAZ", GoGetter: "InstancesHandlingRequestsInThisAZ"},
+			_jsii_.MemberProperty{JsiiProperty: "isolatedImpactAlarm", GoGetter: "IsolatedImpactAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "latencyAlarm", GoGetter: "LatencyAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "multipleInstancesProducingFaultsInThisAvailabilityZone", GoGetter: "MultipleInstancesProducingFaultsInThisAvailabilityZone"},
+			_jsii_.MemberProperty{JsiiProperty: "multipleInstancesProducingHighLatencyInThisAZ", GoGetter: "MultipleInstancesProducingHighLatencyInThisAZ"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IServerSideOperationZonalAlarmsAndRules{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IBaseOperationZonalAlarmsAndRules)
+			return &j
 		},
 	)
 	_jsii_.RegisterInterface(
@@ -328,8 +555,8 @@ func init() {
 		},
 	)
 	_jsii_.RegisterInterface(
-		"@cdklabs/multi-az-observability.IServiceMetricDetails",
-		reflect.TypeOf((*IServiceMetricDetails)(nil)).Elem(),
+		"@cdklabs/multi-az-observability.IServiceAvailabilityMetricDetails",
+		reflect.TypeOf((*IServiceAvailabilityMetricDetails)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
 			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
@@ -345,6 +572,49 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
 		},
 		func() interface{} {
+			j := jsiiProxy_IServiceAvailabilityMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IServiceMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IServiceLatencyMetricDetails",
+		reflect.TypeOf((*IServiceLatencyMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
+			j := jsiiProxy_IServiceLatencyMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IServiceMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterInterface(
+		"@cdklabs/multi-az-observability.IServiceMetricDetails",
+		reflect.TypeOf((*IServiceMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
 			return &jsiiProxy_IServiceMetricDetails{}
 		},
 	)
@@ -355,6 +625,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "canaryLogGroup", GoGetter: "CanaryLogGroup"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberProperty{JsiiProperty: "operationDashboards", GoGetter: "OperationDashboards"},
+			_jsii_.MemberProperty{JsiiProperty: "perOperationAlarmsAndRules", GoGetter: "PerOperationAlarmsAndRules"},
 			_jsii_.MemberProperty{JsiiProperty: "perOperationZonalImpactAlarms", GoGetter: "PerOperationZonalImpactAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceAlarms", GoGetter: "ServiceAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceDashboard", GoGetter: "ServiceDashboard"},
@@ -418,8 +689,8 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"@cdklabs/multi-az-observability.OperationMetricDetails",
-		reflect.TypeOf((*OperationMetricDetails)(nil)).Elem(),
+		"@cdklabs/multi-az-observability.OperationAvailabilityMetricDetails",
+		reflect.TypeOf((*OperationAvailabilityMetricDetails)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
 			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
@@ -433,6 +704,63 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "operationName", GoGetter: "OperationName"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
+			j := jsiiProxy_OperationAvailabilityMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_OperationMetricDetails)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IOperationAvailabilityMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.OperationAvailabilityMetricDetailsProps",
+		reflect.TypeOf((*OperationAvailabilityMetricDetailsProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@cdklabs/multi-az-observability.OperationLatencyMetricDetails",
+		reflect.TypeOf((*OperationLatencyMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricDimensions", GoGetter: "MetricDimensions"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "operationName", GoGetter: "OperationName"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
+			j := jsiiProxy_OperationLatencyMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_OperationMetricDetails)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IOperationLatencyMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.OperationLatencyMetricDetailsProps",
+		reflect.TypeOf((*OperationLatencyMetricDetailsProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@cdklabs/multi-az-observability.OperationMetricDetails",
+		reflect.TypeOf((*OperationMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricDimensions", GoGetter: "MetricDimensions"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "operationName", GoGetter: "OperationName"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
 			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
 		},
@@ -492,8 +820,8 @@ func init() {
 		},
 	)
 	_jsii_.RegisterClass(
-		"@cdklabs/multi-az-observability.ServiceMetricDetails",
-		reflect.TypeOf((*ServiceMetricDetails)(nil)).Elem(),
+		"@cdklabs/multi-az-observability.ServiceAvailabilityMetricDetails",
+		reflect.TypeOf((*ServiceAvailabilityMetricDetails)(nil)).Elem(),
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
 			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
@@ -505,6 +833,59 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ServiceAvailabilityMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_ServiceMetricDetails)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IServiceAvailabilityMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.ServiceAvailabilityMetricDetailsProps",
+		reflect.TypeOf((*ServiceAvailabilityMetricDetailsProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@cdklabs/multi-az-observability.ServiceLatencyMetricDetails",
+		reflect.TypeOf((*ServiceLatencyMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
+			_jsii_.MemberProperty{JsiiProperty: "successAlarmThreshold", GoGetter: "SuccessAlarmThreshold"},
+			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
+		},
+		func() interface{} {
+			j := jsiiProxy_ServiceLatencyMetricDetails{}
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_ServiceMetricDetails)
+			_jsii_.InitJsiiProxy(&j.jsiiProxy_IServiceLatencyMetricDetails)
+			return &j
+		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.ServiceLatencyMetricDetailsProps",
+		reflect.TypeOf((*ServiceLatencyMetricDetailsProps)(nil)).Elem(),
+	)
+	_jsii_.RegisterClass(
+		"@cdklabs/multi-az-observability.ServiceMetricDetails",
+		reflect.TypeOf((*ServiceMetricDetails)(nil)).Elem(),
+		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "alarmStatistic", GoGetter: "AlarmStatistic"},
+			_jsii_.MemberProperty{JsiiProperty: "datapointsToAlarm", GoGetter: "DatapointsToAlarm"},
+			_jsii_.MemberProperty{JsiiProperty: "evaluationPeriods", GoGetter: "EvaluationPeriods"},
+			_jsii_.MemberProperty{JsiiProperty: "faultMetricNames", GoGetter: "FaultMetricNames"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedFaultStatistics", GoGetter: "GraphedFaultStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "graphedSuccessStatistics", GoGetter: "GraphedSuccessStatistics"},
+			_jsii_.MemberProperty{JsiiProperty: "metricNamespace", GoGetter: "MetricNamespace"},
+			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "successMetricNames", GoGetter: "SuccessMetricNames"},
 			_jsii_.MemberProperty{JsiiProperty: "unit", GoGetter: "Unit"},
 		},

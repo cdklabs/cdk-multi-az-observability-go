@@ -20,15 +20,9 @@ type CanaryTestMetricsOverride interface {
 	// The number of evaluation periods for latency and availabiltiy alarms.
 	// Experimental.
 	EvaluationPeriods() *float64
-	// The threshold for alarms associated with fault metrics, for example if measuring fault rate, the threshold may be 1, meaning you would want an alarm that triggers if the fault rate goes above 1%.
-	// Experimental.
-	FaultAlarmThreshold() *float64
 	// The period for the metrics.
 	// Experimental.
 	Period() awscdk.Duration
-	// The threshold for alarms associated with success metrics, for example if measuring success rate, the threshold may be 99, meaning you would want an alarm that triggers if success drops below 99%.
-	// Experimental.
-	SuccessAlarmThreshold() *float64
 }
 
 // The jsii proxy struct for CanaryTestMetricsOverride
@@ -66,16 +60,6 @@ func (j *jsiiProxy_CanaryTestMetricsOverride) EvaluationPeriods() *float64 {
 	return returns
 }
 
-func (j *jsiiProxy_CanaryTestMetricsOverride) FaultAlarmThreshold() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"faultAlarmThreshold",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_CanaryTestMetricsOverride) Period() awscdk.Duration {
 	var returns awscdk.Duration
 	_jsii_.Get(
@@ -86,34 +70,6 @@ func (j *jsiiProxy_CanaryTestMetricsOverride) Period() awscdk.Duration {
 	return returns
 }
 
-func (j *jsiiProxy_CanaryTestMetricsOverride) SuccessAlarmThreshold() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"successAlarmThreshold",
-		&returns,
-	)
-	return returns
-}
-
-
-// Experimental.
-func NewCanaryTestMetricsOverride(props *CanaryTestMetricsOverrideProps) CanaryTestMetricsOverride {
-	_init_.Initialize()
-
-	if err := validateNewCanaryTestMetricsOverrideParameters(props); err != nil {
-		panic(err)
-	}
-	j := jsiiProxy_CanaryTestMetricsOverride{}
-
-	_jsii_.Create(
-		"@cdklabs/multi-az-observability.CanaryTestMetricsOverride",
-		[]interface{}{props},
-		&j,
-	)
-
-	return &j
-}
 
 // Experimental.
 func NewCanaryTestMetricsOverride_Override(c CanaryTestMetricsOverride, props *CanaryTestMetricsOverrideProps) {

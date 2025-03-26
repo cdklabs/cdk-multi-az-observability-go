@@ -6,9 +6,9 @@ package multi-az-observability
 type CanaryMetricProps struct {
 	// The canary availability metric details.
 	// Experimental.
-	CanaryAvailabilityMetricDetails IOperationMetricDetails `field:"required" json:"canaryAvailabilityMetricDetails" yaml:"canaryAvailabilityMetricDetails"`
+	CanaryAvailabilityMetricDetails IOperationAvailabilityMetricDetails `field:"required" json:"canaryAvailabilityMetricDetails" yaml:"canaryAvailabilityMetricDetails"`
 	// The canary latency metric details.
 	// Experimental.
-	CanaryLatencyMetricDetails IOperationMetricDetails `field:"required" json:"canaryLatencyMetricDetails" yaml:"canaryLatencyMetricDetails"`
+	CanaryLatencyMetricDetails IOperationLatencyMetricDetails `field:"required" json:"canaryLatencyMetricDetails" yaml:"canaryLatencyMetricDetails"`
 }
 

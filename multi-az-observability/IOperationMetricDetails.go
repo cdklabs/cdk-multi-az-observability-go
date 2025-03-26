@@ -19,9 +19,6 @@ type IOperationMetricDetails interface {
 	// The number of evaluation periods for latency and availabiltiy alarms.
 	// Experimental.
 	EvaluationPeriods() *float64
-	// The threshold for alarms associated with fault metrics, for example if measuring fault rate, the threshold may be 1, meaning you would want an alarm that triggers if the fault rate goes above 1%.
-	// Experimental.
-	FaultAlarmThreshold() *float64
 	// The names of fault indicating metrics.
 	// Experimental.
 	FaultMetricNames() *[]*string
@@ -53,9 +50,6 @@ type IOperationMetricDetails interface {
 	// The period for the metrics.
 	// Experimental.
 	Period() awscdk.Duration
-	// The threshold for alarms associated with success metrics, for example if measuring success rate, the threshold may be 99, meaning you would want an alarm that triggers if success drops below 99%.
-	// Experimental.
-	SuccessAlarmThreshold() *float64
 	// The names of success indicating metrics.
 	// Experimental.
 	SuccessMetricNames() *[]*string
@@ -94,16 +88,6 @@ func (j *jsiiProxy_IOperationMetricDetails) EvaluationPeriods() *float64 {
 	_jsii_.Get(
 		j,
 		"evaluationPeriods",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_IOperationMetricDetails) FaultAlarmThreshold() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"faultAlarmThreshold",
 		&returns,
 	)
 	return returns
@@ -174,16 +158,6 @@ func (j *jsiiProxy_IOperationMetricDetails) Period() awscdk.Duration {
 	_jsii_.Get(
 		j,
 		"period",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_IOperationMetricDetails) SuccessAlarmThreshold() *float64 {
-	var returns *float64
-	_jsii_.Get(
-		j,
-		"successAlarmThreshold",
 		&returns,
 	)
 	return returns

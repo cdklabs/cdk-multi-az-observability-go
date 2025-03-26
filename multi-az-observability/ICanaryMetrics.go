@@ -9,10 +9,10 @@ import (
 type ICanaryMetrics interface {
 	// The canary availability metric details.
 	// Experimental.
-	CanaryAvailabilityMetricDetails() IOperationMetricDetails
+	CanaryAvailabilityMetricDetails() IOperationAvailabilityMetricDetails
 	// The canary latency metric details.
 	// Experimental.
-	CanaryLatencyMetricDetails() IOperationMetricDetails
+	CanaryLatencyMetricDetails() IOperationLatencyMetricDetails
 }
 
 // The jsii proxy for ICanaryMetrics
@@ -20,8 +20,8 @@ type jsiiProxy_ICanaryMetrics struct {
 	_ byte // padding
 }
 
-func (j *jsiiProxy_ICanaryMetrics) CanaryAvailabilityMetricDetails() IOperationMetricDetails {
-	var returns IOperationMetricDetails
+func (j *jsiiProxy_ICanaryMetrics) CanaryAvailabilityMetricDetails() IOperationAvailabilityMetricDetails {
+	var returns IOperationAvailabilityMetricDetails
 	_jsii_.Get(
 		j,
 		"canaryAvailabilityMetricDetails",
@@ -30,8 +30,8 @@ func (j *jsiiProxy_ICanaryMetrics) CanaryAvailabilityMetricDetails() IOperationM
 	return returns
 }
 
-func (j *jsiiProxy_ICanaryMetrics) CanaryLatencyMetricDetails() IOperationMetricDetails {
-	var returns IOperationMetricDetails
+func (j *jsiiProxy_ICanaryMetrics) CanaryLatencyMetricDetails() IOperationLatencyMetricDetails {
+	var returns IOperationLatencyMetricDetails
 	_jsii_.Get(
 		j,
 		"canaryLatencyMetricDetails",

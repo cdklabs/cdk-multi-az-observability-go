@@ -16,10 +16,10 @@ type ServiceProps struct {
 	BaseUrl *string `field:"required" json:"baseUrl" yaml:"baseUrl"`
 	// The default settings that are used for availability metrics for all operations unless specifically overridden in an operation definition.
 	// Experimental.
-	DefaultAvailabilityMetricDetails IServiceMetricDetails `field:"required" json:"defaultAvailabilityMetricDetails" yaml:"defaultAvailabilityMetricDetails"`
+	DefaultAvailabilityMetricDetails IServiceAvailabilityMetricDetails `field:"required" json:"defaultAvailabilityMetricDetails" yaml:"defaultAvailabilityMetricDetails"`
 	// The default settings that are used for availability metrics for all operations unless specifically overridden in an operation definition.
 	// Experimental.
-	DefaultLatencyMetricDetails IServiceMetricDetails `field:"required" json:"defaultLatencyMetricDetails" yaml:"defaultLatencyMetricDetails"`
+	DefaultLatencyMetricDetails IServiceLatencyMetricDetails `field:"required" json:"defaultLatencyMetricDetails" yaml:"defaultLatencyMetricDetails"`
 	// The fault count threshold that indicates the service is unhealthy.
 	//
 	// This is an absolute value of faults

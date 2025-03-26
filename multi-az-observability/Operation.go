@@ -14,10 +14,10 @@ type Operation interface {
 	CanaryMetricDetails() ICanaryMetrics
 	// The override values for automatically created canary tests so you can use values other than the service defaults to define the thresholds for availability.
 	// Experimental.
-	CanaryTestAvailabilityMetricsOverride() ICanaryTestMetricsOverride
+	CanaryTestAvailabilityMetricsOverride() ICanaryTestAvailabilityMetricsOverride
 	// The override values for automatically created canary tests so you can use values other than the service defaults to define the thresholds for latency.
 	// Experimental.
-	CanaryTestLatencyMetricsOverride() ICanaryTestMetricsOverride
+	CanaryTestLatencyMetricsOverride() ICanaryTestLatencyMetricsOverride
 	// If they have been added, the properties for creating new canary tests on this operation.
 	// Experimental.
 	CanaryTestProps() *AddCanaryTestProps
@@ -40,13 +40,13 @@ type Operation interface {
 	Path() *string
 	// The server side availability metric details.
 	// Experimental.
-	ServerSideAvailabilityMetricDetails() IOperationMetricDetails
+	ServerSideAvailabilityMetricDetails() IOperationAvailabilityMetricDetails
 	// The server side details for contributor insights rules.
 	// Experimental.
 	ServerSideContributorInsightRuleDetails() IContributorInsightRuleDetails
 	// The server side latency metric details.
 	// Experimental.
-	ServerSideLatencyMetricDetails() IOperationMetricDetails
+	ServerSideLatencyMetricDetails() IOperationLatencyMetricDetails
 	// The service the operation is associated with.
 	// Experimental.
 	Service() IService
@@ -67,8 +67,8 @@ func (j *jsiiProxy_Operation) CanaryMetricDetails() ICanaryMetrics {
 	return returns
 }
 
-func (j *jsiiProxy_Operation) CanaryTestAvailabilityMetricsOverride() ICanaryTestMetricsOverride {
-	var returns ICanaryTestMetricsOverride
+func (j *jsiiProxy_Operation) CanaryTestAvailabilityMetricsOverride() ICanaryTestAvailabilityMetricsOverride {
+	var returns ICanaryTestAvailabilityMetricsOverride
 	_jsii_.Get(
 		j,
 		"canaryTestAvailabilityMetricsOverride",
@@ -77,8 +77,8 @@ func (j *jsiiProxy_Operation) CanaryTestAvailabilityMetricsOverride() ICanaryTes
 	return returns
 }
 
-func (j *jsiiProxy_Operation) CanaryTestLatencyMetricsOverride() ICanaryTestMetricsOverride {
-	var returns ICanaryTestMetricsOverride
+func (j *jsiiProxy_Operation) CanaryTestLatencyMetricsOverride() ICanaryTestLatencyMetricsOverride {
+	var returns ICanaryTestLatencyMetricsOverride
 	_jsii_.Get(
 		j,
 		"canaryTestLatencyMetricsOverride",
@@ -147,8 +147,8 @@ func (j *jsiiProxy_Operation) Path() *string {
 	return returns
 }
 
-func (j *jsiiProxy_Operation) ServerSideAvailabilityMetricDetails() IOperationMetricDetails {
-	var returns IOperationMetricDetails
+func (j *jsiiProxy_Operation) ServerSideAvailabilityMetricDetails() IOperationAvailabilityMetricDetails {
+	var returns IOperationAvailabilityMetricDetails
 	_jsii_.Get(
 		j,
 		"serverSideAvailabilityMetricDetails",
@@ -167,8 +167,8 @@ func (j *jsiiProxy_Operation) ServerSideContributorInsightRuleDetails() IContrib
 	return returns
 }
 
-func (j *jsiiProxy_Operation) ServerSideLatencyMetricDetails() IOperationMetricDetails {
-	var returns IOperationMetricDetails
+func (j *jsiiProxy_Operation) ServerSideLatencyMetricDetails() IOperationLatencyMetricDetails {
+	var returns IOperationLatencyMetricDetails
 	_jsii_.Get(
 		j,
 		"serverSideLatencyMetricDetails",

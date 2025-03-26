@@ -1,6 +1,7 @@
 package multi-az-observability
 
 import (
+	"github.com/aws/aws-cdk-go/awscdk/v2"
 	"github.com/aws/aws-cdk-go/awscdk/v2/awselasticloadbalancingv2"
 )
 
@@ -21,7 +22,7 @@ type ApplicationLoadBalancerDetectionProps struct {
 	LatencyStatistic *string `field:"required" json:"latencyStatistic" yaml:"latencyStatistic"`
 	// The threshold in milliseconds for ALB targets whose responses are slower than this value at the specified percentile statistic.
 	// Experimental.
-	LatencyThreshold *float64 `field:"required" json:"latencyThreshold" yaml:"latencyThreshold"`
+	LatencyThreshold awscdk.Duration `field:"required" json:"latencyThreshold" yaml:"latencyThreshold"`
 	// The method used to determine if an AZ is an outlier for availability for Application Load Balancer metrics.
 	// Default: STATIC.
 	//

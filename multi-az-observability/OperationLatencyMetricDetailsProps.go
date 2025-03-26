@@ -1,0 +1,79 @@
+package multi-az-observability
+
+import (
+	"github.com/aws/aws-cdk-go/awscdk/v2"
+	"github.com/aws/aws-cdk-go/awscdk/v2/awscloudwatch"
+)
+
+// The properties for an operation's latency metric details.
+// Experimental.
+type OperationLatencyMetricDetailsProps struct {
+	// The user implemented functions for providing the metric's dimensions.
+	// Experimental.
+	MetricDimensions MetricDimensions `field:"required" json:"metricDimensions" yaml:"metricDimensions"`
+	// The operation these metric details are for.
+	// Experimental.
+	OperationName *string `field:"required" json:"operationName" yaml:"operationName"`
+	// The statistic used for alarms, for availability metrics this should be "Sum", for latency metrics it could something like "p99" or "p99.9".
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	AlarmStatistic *string `field:"optional" json:"alarmStatistic" yaml:"alarmStatistic"`
+	// The number of datapoints to alarm on for latency and availability alarms.
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	DatapointsToAlarm *float64 `field:"optional" json:"datapointsToAlarm" yaml:"datapointsToAlarm"`
+	// The number of evaluation periods for latency and availabiltiy alarms.
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	EvaluationPeriods *float64 `field:"optional" json:"evaluationPeriods" yaml:"evaluationPeriods"`
+	// The names of fault indicating metrics.
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	FaultMetricNames *[]*string `field:"optional" json:"faultMetricNames" yaml:"faultMetricNames"`
+	// The statistics for faults you want to appear on dashboards, for example, with latency metrics, you might want p50, p99, and tm99.
+	//
+	// For availability
+	// metrics this will typically just be "Sum".
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	GraphedFaultStatistics *[]*string `field:"optional" json:"graphedFaultStatistics" yaml:"graphedFaultStatistics"`
+	// The statistics for successes you want to appear on dashboards, for example, with latency metrics, you might want p50, p99, and tm99.
+	//
+	// For availability
+	// metrics this will typically just be "Sum".
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	GraphedSuccessStatistics *[]*string `field:"optional" json:"graphedSuccessStatistics" yaml:"graphedSuccessStatistics"`
+	// The CloudWatch metric namespace for these metrics.
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	MetricNamespace *string `field:"optional" json:"metricNamespace" yaml:"metricNamespace"`
+	// The period for the metrics.
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	Period awscdk.Duration `field:"optional" json:"period" yaml:"period"`
+	// The names of success indicating metrics.
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	SuccessMetricNames *[]*string `field:"optional" json:"successMetricNames" yaml:"successMetricNames"`
+	// The unit used for these metrics.
+	// Default: - The service default is used.
+	//
+	// Experimental.
+	Unit awscloudwatch.Unit `field:"optional" json:"unit" yaml:"unit"`
+	// The threshold for alarms associated with latency success metrics, for example if success latency exceeds 500 milliseconds.
+	// Default: "The service default is used".
+	//
+	// Experimental.
+	SuccessAlarmThreshold awscdk.Duration `field:"optional" json:"successAlarmThreshold" yaml:"successAlarmThreshold"`
+}
+

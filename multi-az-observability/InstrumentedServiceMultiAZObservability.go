@@ -26,6 +26,9 @@ type InstrumentedServiceMultiAZObservability interface {
 	// The dashboards for each operation.
 	// Experimental.
 	OperationDashboards() *[]awscloudwatch.Dashboard
+	// Key represents the operation name and the value is the set of zonal alarms and rules for that operation.
+	// Experimental.
+	PerOperationAlarmsAndRules() *map[string]IOperationAlarmsAndRules
 	// Index into the dictionary by operation name, then by Availability Zone Id to get the alarms that indicate an AZ shows isolated impact from availability or latency as seen by either the server-side or canary.
 	//
 	// These are the alarms
@@ -74,6 +77,16 @@ func (j *jsiiProxy_InstrumentedServiceMultiAZObservability) OperationDashboards(
 	_jsii_.Get(
 		j,
 		"operationDashboards",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_InstrumentedServiceMultiAZObservability) PerOperationAlarmsAndRules() *map[string]IOperationAlarmsAndRules {
+	var returns *map[string]IOperationAlarmsAndRules
+	_jsii_.Get(
+		j,
+		"perOperationAlarmsAndRules",
 		&returns,
 	)
 	return returns

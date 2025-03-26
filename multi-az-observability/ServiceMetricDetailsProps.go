@@ -17,9 +17,6 @@ type ServiceMetricDetailsProps struct {
 	// The number of evaluation periods for latency and availabiltiy alarms.
 	// Experimental.
 	EvaluationPeriods *float64 `field:"required" json:"evaluationPeriods" yaml:"evaluationPeriods"`
-	// The threshold for alarms associated with fault metrics, for example if measuring fault rate, the threshold may be 1, meaning you would want an alarm that triggers if the fault rate goes above 1%.
-	// Experimental.
-	FaultAlarmThreshold *float64 `field:"required" json:"faultAlarmThreshold" yaml:"faultAlarmThreshold"`
 	// The names of fault indicating metrics.
 	// Experimental.
 	FaultMetricNames *[]*string `field:"required" json:"faultMetricNames" yaml:"faultMetricNames"`
@@ -29,9 +26,6 @@ type ServiceMetricDetailsProps struct {
 	// The period for the metrics.
 	// Experimental.
 	Period awscdk.Duration `field:"required" json:"period" yaml:"period"`
-	// The threshold for alarms associated with success metrics, for example if measuring success rate, the threshold may be 99, meaning you would want an alarm that triggers if success drops below 99%.
-	// Experimental.
-	SuccessAlarmThreshold *float64 `field:"required" json:"successAlarmThreshold" yaml:"successAlarmThreshold"`
 	// The names of success indicating metrics.
 	// Experimental.
 	SuccessMetricNames *[]*string `field:"required" json:"successMetricNames" yaml:"successMetricNames"`

@@ -18,10 +18,10 @@ type OperationProps struct {
 	Path *string `field:"required" json:"path" yaml:"path"`
 	// The server side availability metric details.
 	// Experimental.
-	ServerSideAvailabilityMetricDetails IOperationMetricDetails `field:"required" json:"serverSideAvailabilityMetricDetails" yaml:"serverSideAvailabilityMetricDetails"`
+	ServerSideAvailabilityMetricDetails IOperationAvailabilityMetricDetails `field:"required" json:"serverSideAvailabilityMetricDetails" yaml:"serverSideAvailabilityMetricDetails"`
 	// The server side latency metric details.
 	// Experimental.
-	ServerSideLatencyMetricDetails IOperationMetricDetails `field:"required" json:"serverSideLatencyMetricDetails" yaml:"serverSideLatencyMetricDetails"`
+	ServerSideLatencyMetricDetails IOperationLatencyMetricDetails `field:"required" json:"serverSideLatencyMetricDetails" yaml:"serverSideLatencyMetricDetails"`
 	// The service the operation is associated with.
 	// Experimental.
 	Service IService `field:"required" json:"service" yaml:"service"`
