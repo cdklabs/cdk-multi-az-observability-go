@@ -642,6 +642,14 @@ func init() {
 		"@cdklabs/multi-az-observability.InstrumentedServiceMultiAZObservabilityProps",
 		reflect.TypeOf((*InstrumentedServiceMultiAZObservabilityProps)(nil)).Elem(),
 	)
+	_jsii_.RegisterEnum(
+		"@cdklabs/multi-az-observability.LatencyOutlierMetricAggregation",
+		reflect.TypeOf((*LatencyOutlierMetricAggregation)(nil)).Elem(),
+		map[string]interface{}{
+			"COUNT": LatencyOutlierMetricAggregation_COUNT,
+			"VALUE": LatencyOutlierMetricAggregation_VALUE,
+		},
+	)
 	_jsii_.RegisterClass(
 		"@cdklabs/multi-az-observability.MetricDimensions",
 		reflect.TypeOf((*MetricDimensions)(nil)).Elem(),
