@@ -400,10 +400,12 @@ func init() {
 		[]_jsii_.Member{
 			_jsii_.MemberProperty{JsiiProperty: "aggregateZonalAlarms", GoGetter: "AggregateZonalAlarms"},
 			_jsii_.MemberProperty{JsiiProperty: "canaryRegionalAlarmsAndRules", GoGetter: "CanaryRegionalAlarmsAndRules"},
+			_jsii_.MemberProperty{JsiiProperty: "canaryRegionalImpactAlarm", GoGetter: "CanaryRegionalImpactAlarm"},
 			_jsii_.MemberProperty{JsiiProperty: "canaryZonalAlarmsAndRules", GoGetter: "CanaryZonalAlarmsAndRules"},
 			_jsii_.MemberProperty{JsiiProperty: "operation", GoGetter: "Operation"},
 			_jsii_.MemberProperty{JsiiProperty: "regionalImpactAlarm", GoGetter: "RegionalImpactAlarm"},
 			_jsii_.MemberProperty{JsiiProperty: "serverSideRegionalAlarmsAndRules", GoGetter: "ServerSideRegionalAlarmsAndRules"},
+			_jsii_.MemberProperty{JsiiProperty: "serverSideRegionalImpactAlarm", GoGetter: "ServerSideRegionalImpactAlarm"},
 			_jsii_.MemberProperty{JsiiProperty: "serverSideZonalAlarmsAndRules", GoGetter: "ServerSideZonalAlarmsAndRules"},
 		},
 		func() interface{} {

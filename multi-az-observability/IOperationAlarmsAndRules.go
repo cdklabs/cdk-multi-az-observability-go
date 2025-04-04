@@ -15,6 +15,9 @@ type IOperationAlarmsAndRules interface {
 	// The canary regional alarms and rules.
 	// Experimental.
 	CanaryRegionalAlarmsAndRules() ICanaryOperationRegionalAlarmsAndRules
+	// An alarm indicating availability or latency impact has been detected by the canary and the impact is regionally scoped, not zonal.
+	// Experimental.
+	CanaryRegionalImpactAlarm() awscloudwatch.IAlarm
 	// The canary zonal alarms and rules, indexed by Availability Zone name.
 	// Default: - This is an empty dictionary if canary metric details are not provided.
 	//
@@ -29,6 +32,9 @@ type IOperationAlarmsAndRules interface {
 	// The server side regional alarms and rules.
 	// Experimental.
 	ServerSideRegionalAlarmsAndRules() IServerSideOperationRegionalAlarmsAndRules
+	// An alarm indicating availability or latency impact has been detected by the server-side and the impact is regionally scoped, not zonal.
+	// Experimental.
+	ServerSideRegionalImpactAlarm() awscloudwatch.IAlarm
 	// The server side zonal alarms and rules, indexed by Availability Zone name.
 	// Experimental.
 	ServerSideZonalAlarmsAndRules() *map[string]IServerSideOperationZonalAlarmsAndRules
@@ -54,6 +60,16 @@ func (j *jsiiProxy_IOperationAlarmsAndRules) CanaryRegionalAlarmsAndRules() ICan
 	_jsii_.Get(
 		j,
 		"canaryRegionalAlarmsAndRules",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IOperationAlarmsAndRules) CanaryRegionalImpactAlarm() awscloudwatch.IAlarm {
+	var returns awscloudwatch.IAlarm
+	_jsii_.Get(
+		j,
+		"canaryRegionalImpactAlarm",
 		&returns,
 	)
 	return returns
@@ -94,6 +110,16 @@ func (j *jsiiProxy_IOperationAlarmsAndRules) ServerSideRegionalAlarmsAndRules() 
 	_jsii_.Get(
 		j,
 		"serverSideRegionalAlarmsAndRules",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IOperationAlarmsAndRules) ServerSideRegionalImpactAlarm() awscloudwatch.IAlarm {
+	var returns awscloudwatch.IAlarm
+	_jsii_.Get(
+		j,
+		"serverSideRegionalImpactAlarm",
 		&returns,
 	)
 	return returns
