@@ -532,6 +532,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "defaultLatencyMetricDetails", GoGetter: "DefaultLatencyMetricDetails"},
 			_jsii_.MemberProperty{JsiiProperty: "faultCountThreshold", GoGetter: "FaultCountThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "loadBalancer", GoGetter: "LoadBalancer"},
+			_jsii_.MemberProperty{JsiiProperty: "minimumUnhealthyTargets", GoGetter: "MinimumUnhealthyTargets"},
 			_jsii_.MemberProperty{JsiiProperty: "operations", GoGetter: "Operations"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceName", GoGetter: "ServiceName"},
@@ -665,6 +666,10 @@ func init() {
 		func() interface{} {
 			return &jsiiProxy_MetricDimensions{}
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.MinimumUnhealthyTargets",
+		reflect.TypeOf((*MinimumUnhealthyTargets)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@cdklabs/multi-az-observability.NatGatewayDetectionProps",
@@ -819,6 +824,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "defaultLatencyMetricDetails", GoGetter: "DefaultLatencyMetricDetails"},
 			_jsii_.MemberProperty{JsiiProperty: "faultCountThreshold", GoGetter: "FaultCountThreshold"},
 			_jsii_.MemberProperty{JsiiProperty: "loadBalancer", GoGetter: "LoadBalancer"},
+			_jsii_.MemberProperty{JsiiProperty: "minimumUnhealthyTargets", GoGetter: "MinimumUnhealthyTargets"},
 			_jsii_.MemberProperty{JsiiProperty: "operations", GoGetter: "Operations"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceName", GoGetter: "ServiceName"},

@@ -54,5 +54,10 @@ type ServiceProps struct {
 	//
 	// Experimental.
 	LoadBalancer awselasticloadbalancingv2.ILoadBalancerV2 `field:"optional" json:"loadBalancer" yaml:"loadBalancer"`
+	// The minimum number of unhealthy targets for an AZ to be considered unhealthy.
+	// Default: Count of 2.
+	//
+	// Experimental.
+	MinimumUnhealthyTargets *MinimumUnhealthyTargets `field:"optional" json:"minimumUnhealthyTargets" yaml:"minimumUnhealthyTargets"`
 }
 

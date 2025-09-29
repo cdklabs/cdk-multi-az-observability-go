@@ -52,6 +52,11 @@ type IService interface {
 	//
 	// Experimental.
 	LoadBalancer() awselasticloadbalancingv2.ILoadBalancerV2
+	// The minimum number of unhealthy targets to consider an AZ impaired.
+	// Default: Count of 2.
+	//
+	// Experimental.
+	MinimumUnhealthyTargets() *MinimumUnhealthyTargets
 	// The operations that are part of this service.
 	// Experimental.
 	Operations() *[]IOperation
@@ -154,6 +159,16 @@ func (j *jsiiProxy_IService) LoadBalancer() awselasticloadbalancingv2.ILoadBalan
 	_jsii_.Get(
 		j,
 		"loadBalancer",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_IService) MinimumUnhealthyTargets() *MinimumUnhealthyTargets {
+	var returns *MinimumUnhealthyTargets
+	_jsii_.Get(
+		j,
+		"minimumUnhealthyTargets",
 		&returns,
 	)
 	return returns
