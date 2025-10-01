@@ -2,15 +2,14 @@ package multi-az-observability
 
 import (
 	"github.com/aws/aws-cdk-go/awscdk/v2"
-	"github.com/aws/aws-cdk-go/awscdk/v2/awselasticloadbalancingv2"
 )
 
 // The properties for performing zonal impact detection with ALB(s).
 // Experimental.
 type ApplicationLoadBalancerDetectionProps struct {
-	// The application load balancers to collect metrics from.
+	// Map of target groups per ALB to collect metrics from.
 	// Experimental.
-	ApplicationLoadBalancers *[]awselasticloadbalancingv2.IApplicationLoadBalancer `field:"required" json:"applicationLoadBalancers" yaml:"applicationLoadBalancers"`
+	AlbTargetGroupMap *[]*AlbTargetGroupMap `field:"required" json:"albTargetGroupMap" yaml:"albTargetGroupMap"`
 	// The percentage of faults for a single ALB to consider an AZ to be unhealthy, a number between 0 and 100.
 	//
 	// This should align with your availability goal. For example

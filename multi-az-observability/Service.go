@@ -65,6 +65,11 @@ type Service interface {
 	// The name of your service.
 	// Experimental.
 	ServiceName() *string
+	// The target groups registered with the load balancer.
+	// Default: Anomalous and mitigated host metrics will not be included on dashboards.
+	//
+	// Experimental.
+	TargetGroups() *[]awselasticloadbalancingv2.ITargetGroup
 	// Adds an operation to this service and sets the operation's service property.
 	// Experimental.
 	AddOperation(operation IOperation)
@@ -190,6 +195,16 @@ func (j *jsiiProxy_Service) ServiceName() *string {
 	_jsii_.Get(
 		j,
 		"serviceName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Service) TargetGroups() *[]awselasticloadbalancingv2.ITargetGroup {
+	var returns *[]awselasticloadbalancingv2.ITargetGroup
+	_jsii_.Get(
+		j,
+		"targetGroups",
 		&returns,
 	)
 	return returns

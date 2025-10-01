@@ -12,6 +12,10 @@ func init() {
 		"@cdklabs/multi-az-observability.AddCanaryTestProps",
 		reflect.TypeOf((*AddCanaryTestProps)(nil)).Elem(),
 	)
+	_jsii_.RegisterStruct(
+		"@cdklabs/multi-az-observability.AlbTargetGroupMap",
+		reflect.TypeOf((*AlbTargetGroupMap)(nil)).Elem(),
+	)
 	_jsii_.RegisterEnum(
 		"@cdklabs/multi-az-observability.ApplicationLoadBalancerAvailabilityOutlierAlgorithm",
 		reflect.TypeOf((*ApplicationLoadBalancerAvailabilityOutlierAlgorithm)(nil)).Elem(),
@@ -536,6 +540,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "operations", GoGetter: "Operations"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceName", GoGetter: "ServiceName"},
+			_jsii_.MemberProperty{JsiiProperty: "targetGroups", GoGetter: "TargetGroups"},
 		},
 		func() interface{} {
 			return &jsiiProxy_IService{}
@@ -828,6 +833,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "operations", GoGetter: "Operations"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberProperty{JsiiProperty: "serviceName", GoGetter: "ServiceName"},
+			_jsii_.MemberProperty{JsiiProperty: "targetGroups", GoGetter: "TargetGroups"},
 		},
 		func() interface{} {
 			j := jsiiProxy_Service{}

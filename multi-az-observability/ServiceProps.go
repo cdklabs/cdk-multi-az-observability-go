@@ -59,5 +59,10 @@ type ServiceProps struct {
 	//
 	// Experimental.
 	MinimumUnhealthyTargets *MinimumUnhealthyTargets `field:"optional" json:"minimumUnhealthyTargets" yaml:"minimumUnhealthyTargets"`
+	// The target groups registered with the load balancer.
+	// Default: Anomalous and mitigated host metrics will not be included on dashboards.
+	//
+	// Experimental.
+	TargetGroups *[]awselasticloadbalancingv2.ITargetGroup `field:"optional" json:"targetGroups" yaml:"targetGroups"`
 }
 
