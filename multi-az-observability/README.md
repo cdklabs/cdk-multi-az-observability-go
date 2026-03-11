@@ -14,7 +14,7 @@ service := multi-az-observability.NewService(&ServiceProps{
 	FaultCountThreshold: jsii.Number(25),
 	Period: awscdk.Duration_Seconds(jsii.Number(60)),
 	LoadBalancer: loadBalancer,
-	TargetGroups: []iTargetGroup{
+	TargetGroups: []ITargetGroup{
 		targetGroup1,
 		targetGroup2,
 	},
@@ -70,7 +70,7 @@ service := multi-az-observability.NewService(&ServiceProps{
 		OperationNameJsonPath: jsii.String("$.Operation"),
 		InstanceIdJsonPath: jsii.String("$.InstanceId"),
 		AvailabilityZoneIdJsonPath: jsii.String("$.AZ-ID"),
-		LogGroups: []iLogGroup{
+		LogGroups: []ILogGroup{
 			logGroup,
 		},
 	}),
@@ -99,7 +99,7 @@ rideOperation := map[string]interface{}{
 		jsii.String("GET"),
 	},
 	"serverSideContributorInsightRuleDetails": multi-az-observability.NewContributorInsightRuleDetails(&ContributorInsightRuleDetailsProps{
-		"logGroups": []*iLogGroup{
+		"logGroups": []ILogGroup{
 			logGroup,
 		},
 		"successLatencyMetricJsonPath": jsii.String("$.SuccessLatency"),
@@ -131,7 +131,7 @@ payOperation := map[string]interface{}{
 		jsii.String("GET"),
 	},
 	"serverSideContributorInsightRuleDetails": multi-az-observability.NewContributorInsightRuleDetails(&ContributorInsightRuleDetailsProps{
-		"logGroups": []*iLogGroup{
+		"logGroups": []ILogGroup{
 			logGroup,
 		},
 		"successLatencyMetricJsonPath": jsii.String("$.SuccessLatency"),
@@ -175,13 +175,13 @@ If you don't have service specific logs and custom metrics with per-AZ dimension
 ```go
 multi-az-observability.NewBasicServiceMultiAZObservability(stack, jsii.String("MAZObservability"), &BasicServiceMultiAZObservabilityProps{
 	ApplicationLoadBalancerProps: &ApplicationLoadBalancerDetectionProps{
-		AlbTargetGroupMap: []albTargetGroupMap{
-			&albTargetGroupMap{
+		AlbTargetGroupMap: []AlbTargetGroupMap{
+			&AlbTargetGroupMap{
 				ApplicationLoadBalancer: awscdk.NewApplicationLoadBalancer(stack, jsii.String("alb"), &ApplicationLoadBalancerProps{
 					Vpc: vpc,
 					CrossZoneEnabled: jsii.Boolean(true),
 				}),
-				TargetGroups: []iTargetGroup{
+				TargetGroups: []ITargetGroup{
 					targetGroup1,
 					targetGroup2,
 				},
@@ -194,14 +194,14 @@ multi-az-observability.NewBasicServiceMultiAZObservability(stack, jsii.String("M
 		LatencyOutlierThreshold: jsii.Number(45),
 	},
 	NatGatewayProps: &NatGatewayDetectionProps{
-		NatGateways: map[string][]cfnNatGateway{
-			"us-east-1a": []*cfnNatGateway{
+		NatGateways: map[string][]CfnNatGateway{
+			"us-east-1a": []CfnNatGateway{
 				natGateway1,
 			},
-			"us-east-1b": []*cfnNatGateway{
+			"us-east-1b": []CfnNatGateway{
 				natGateway2,
 			},
-			"us-east-1c": []*cfnNatGateway{
+			"us-east-1c": []CfnNatGateway{
 				natGateway3,
 			},
 		},
