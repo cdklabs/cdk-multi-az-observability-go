@@ -1,0 +1,30 @@
+//go:build no_runtime_type_checking
+
+package multiazobservability
+
+// Building without runtime type checking enabled, so all the below just return nil
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetRegionalImpactAlarmParameters(val awscloudwatch.IAlarm) error {
+	return nil
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetRegionalServerSideImpactAlarmParameters(val awscloudwatch.IAlarm) error {
+	return nil
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetServiceParameters(val IService) error {
+	return nil
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetServiceImpactAlarmParameters(val awscloudwatch.IAlarm) error {
+	return nil
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetZonalAggregateIsolatedImpactAlarmsParameters(val *map[string]awscloudwatch.IAlarm) error {
+	return nil
+}
+
+func (j *jsiiProxy_IServiceAlarmsAndRules) validateSetZonalServerSideIsolatedImpactAlarmsParameters(val *map[string]awscloudwatch.IAlarm) error {
+	return nil
+}
+
